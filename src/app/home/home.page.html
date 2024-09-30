@@ -1,22 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title style="text-align: center;">
+      Calculadora de Indice de Massa Corporal (IMC) 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
   <div id="container">
-    <h3>Projeto com Bootstrap e Ionic!</h3>
-    <hr>
-    <p>Componentes Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"> - UI Components</a></p>
-    <p>Componentes Bootstrap <a target="_blank" rel="noopener noreferrer" href="https://getbootstrap.com/docs/5.3/components/buttons/"> - UI Components</a></p>
-  </div>
+    <ion-card style="margin: 0 auto; width: 20%;">
+      <ion-card-header>
+        <ion-card-title>Insira seu peso e sua altura!</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-input type="number" [(ngModel)]="peso" label="Peso" label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+        <br>
+        <ion-input type="number" [(ngModel)]="altura" label="Altura" label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+        <hr>
+        <ion-button (click)="exibir()" color="success">Calcular</ion-button>
+        <hr>
+        <ion-input type="number" [value]="imc" label="IMC" readonly label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+        <br>
+        <ion-input type="text" [value]="classificacao" label="Classificação" readonly label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+        
+      </ion-card-content>
+    </ion-card>
+
+     </div>
 </ion-content>
